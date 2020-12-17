@@ -1,0 +1,98 @@
+body
+{
+    background-color:bisque;
+    font-family:'Times New Roman', Times, serif;
+    width: 100vw;
+}
+    .container{
+       width:90%;
+       margin-left: 70px; 
+       margin-top:50px;
+    }
+    
+    .cv{
+    background-color:coral;
+    display:flex;
+    flex-direction: row;
+    }
+    
+    .profileinfo{
+     display:flex;
+     flex-direction: column;
+    }
+    
+    img{
+        width:200px;
+        height:200px;
+        padding:50px;   
+    }
+    
+    h1{
+        color:black;
+        letter-spacing: 3px;
+        font-size:40px;        
+        padding-top:30px;
+    }
+    h2
+    {
+        color:brown;
+        padding-bottom:10px;
+        font-size: 35px;
+        }
+        
+        h3{
+            color:firebrick;
+            font-weight: bold;
+            line-height: 1px;   
+        }
+        
+        h4{
+          color:darkred;
+        }
+    
+    .intro{
+    margin-right:40px;
+    line-height:1.5em;
+    font-size:20px;    
+    }
+    
+    .personal-info
+    {
+        background-color:brown;
+        display:flex;
+        flex-direction: row;
+        font-weight: bold;
+        font-size: large;
+        border-bottom-style: dotted;
+        justify-content: space-evenly;
+      color: black;
+    }
+    
+    main{
+        background-color:beige;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding:20px 110px;
+        border-bottom-style: dotted;
+    }
+    
+        
+    .skills{
+        background-color:beige; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding:20px 100px;
+        color: black;
+    }
+      
+    li a{
+        color:black; 
+    }
+    
+    li a:hover{
+        color:brown;
+    }
+    
+   
