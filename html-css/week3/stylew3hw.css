@@ -1,0 +1,238 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+fieldset{
+    margin-top:2%;
+}
+.my-website{
+    width:90%;
+    margin:0 auto;
+}
+h1,h2,h3,p{
+    line-height:2em;
+}
+.shipping-check{
+    font-size:1.3em;
+    font-weight:bold;
+    margin-left:10%;
+}
+.header
+{
+    display:flex;
+    justify-content:space-between;
+    flex-direction: row;
+}
+.header img
+{
+width:12vw;
+height:12vw;
+}
+.nav-bar ul
+{
+display:flex;
+flex-direction: row;
+list-style: none;
+}
+.nav-bar li{
+    padding:20px;
+}
+
+
+a{
+    text-decoration:none;
+    color:brown;
+    font-size:1em;
+}
+a:hover{
+    color:black;
+}
+.progress-icon{
+    flex:100%;
+    border:1px solid;
+}
+.progress-part1{
+    height:3em;
+    background-color:grey;
+    width:25%;
+    animation:p1 2s;
+}
+.progress-part2{
+    height:3em;
+    background-color:grey;
+    width:50%;
+    animation:p2 2s;
+}
+.progress-part3{
+    height:3em;
+    background-color:grey;
+    width:75%;
+    animation:p3 2s;
+}
+@keyframes p1{
+    0%{
+        width:0%;
+    }
+    100%{
+        width:25%;
+    }
+}
+@keyframes p2{
+    0%{
+        width:25%;
+    }
+    100%{
+        width:50%;
+    }
+}
+@keyframes p3{
+    0%{
+        width:50%;
+    }
+    100%{
+width:75%;
+    }
+}
+.personal-info, .mail-address {
+display:flex;
+flex-wrap:wrap;
+padding-top:20px;
+}
+.form1{
+    width:48%;
+    margin:1% 1%;
+}
+.form1 label{
+    font-weight:bold;
+    font-size: 1.3em;
+    width: 35%;
+}
+.country-option{
+    width:60%;
+    padding:15px;
+    margin:0;
+}
+.label-left{
+    text-align:right;
+}
+.form1 input{
+    width:60%;
+    padding:15px;
+}
+.form1-description{
+    display:flex;
+    justify-content: flex-start;
+    margin: 2.5% 1%;
+}
+.form1-description label{
+    margin-left: 5%;
+    width:15%;
+    text-align:right;
+    display:inline-block;
+    padding:15px;
+}
+.form1-description input{
+    width:70%;
+    padding:70px;
+    margin-left:3px;
+}
+.profile-desc{
+    font-weight:bold;
+    font-size:1.3em;
+}
+input.check-box{
+    width: 4vw;
+    height:4vh;
+    margin-left:20px;
+    margin-top:7px;
+}
+.hidden
+{
+    margin:0;
+    padding:0;
+    display:inherit;
+}
+.check-box:checked ~ .hidden{
+    display:none;
+}
+input.button{
+    width:200px;
+    padding:30px;
+    font-weight:bold;
+    font-size:20px;
+    float:right;
+    margin:10px 20px;
+}
+/* for part2 html */
+.parent-newsletter{
+    display:flex;
+    margin:30px 80px;
+    font-size:1.3em;
+    font-weight:bold;
+}
+.child-newsletter{
+    display:flex;
+    margin:0 2vw;
+}
+.child-newsletter input{
+    margin:5px 20px;
+}
+/*for part3 form*/
+.options{
+    display:flex;
+    width:48%;
+    flex-wrap:wrap;
+    margin:20px 30px;
+    line-height:3em;
+}
+.options label{
+    font-weight:bold;
+    font-size:1.3em;
+    width:35%;
+    text-align:right;
+}
+.select-menu1, .select-menu2{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+    margin-top:10px;
+}
+.img1{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    width:20%;
+    height:20%;
+}
+.img1 img{
+    width:100%;
+    height:100%;
+}
+.img1 label{
+    font-weight:bold;
+    font-size:1.3em;
+    line-height:2em;
+}
+@media only screen and (max-width:700px){
+    .my-website{
+        font-size:0.7em;
+        
+    }
+    .parent-newsletter,.options{
+        flex-direction:column;
+        justify-content: center;
+
+    }
+    .img1{
+        width:45%;
+        height:45%;
+    }
+    .form1 input{
+        width:50%;
+    }
+    .label-left input{
+        width:20%;
+    }
+}

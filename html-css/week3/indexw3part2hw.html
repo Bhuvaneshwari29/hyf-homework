@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 2</title>
+    <link rel="stylesheet" href="stylew3hw.css">
+</head>
+<body>
+    <div class="my-website">
+        <div class="header">
+            <img src="https://img.icons8.com/bubbles/100/000000/shop-local--v1.png"/ alt="onlineshopping">
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1>Sign up for yourcustomertailor.com</h1>
+    <h2>Step 2/4 how can we reach you?</h2>
+    <h3>Progress</h3>
+    <div class="progress-icon">
+        <div class="progress-part2">
+
+        </div>
+    </div>
+    <p>We will probably need to stay in touch somehow.Let is know how we can reach you?</p>
+    <form action="indexw3part2hw.html" method="GET">
+        <div class="mail-address">
+            <div class="form1 label-left">
+                <label for="email">Email*</label>
+                <input id="email" type="email" required placeholder="xyz@example.com">
+            </div>
+            <div class="form1">
+                <label for="phone">Phone</label>
+                <input id="phone" type="tel" name="phone">
+            </div>
+            <div class="form1 label-left">
+                <label for="password">Password*</label>
+                <input id="password" type="password" name="password" required minlength="10"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}"
+                title="Must contain atleast one number and uppercase and lowercase letter,
+                and atleast 10 or more characters">
+            </div>
+            <div class="form1"></div>
+            <div class="form1 lable-left">
+                <label for="Re-enter-password">Re enter Password*</label>
+                <input id="Re-enter-password" type="password" name="Re-enter-password" required minlenght="10"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}"
+                title="Must contain atleast one number and uppercase and lowercase letter,
+                and atleast 10 or more characters">
+            </div>
+            <div class="form1"></div>
+        </div>
+        <p>I want to sign up for the news letter</p>
+        <div class="parent-newsletter">
+            <div class="child-newsletter">
+                <label for="weeklynews" class="radio-label">Weeklynews</label>
+                <input id="weeklynews" name="weeklynews" type="radio" value="weeklynews" checked>
+            </div>
+            <div class="child-newsletter">
+                <label for="monthlynews" class="radio-label">Monthlynews</label>
+                <input id="monthlynews" name="monthlynews" type="radio" value="monthlynews">
+            </div>
+            <div class="child-newsletter">
+                <label for="dont-sendme-news" class="radio-label">Dont send me news</label>
+                <input id="dont-sendme-news" name="dont-sendme-news" type="radio" value="dont-sendme-news">
+            </div>
+
+        </div>
+        <input type="submit" class="button" value="Next-step">
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 1</title>
+    <link rel="stylesheet" href="stylew3hw.css">
+</head>
+<body>
+    <div class="my-website">
+        <div class="header">
+            <img src="https://img.icons8.com/bubbles/100/000000/shop-local--v1.png"/ alt="onlineshopping">
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <h1>Sign up for yourcustomertailor.com</h1>
+    <p>We cant wait to help you improve your life style and gain attention from people around you.</p>
+    <h2>Step 1/4 tell us who are you?</h2>
+    <h3>Progress</h3>
+    <div class="progress-icon">
+        <div class="progress-part1">
+
+        </div>
+       
+    </div>
+    <p>Nice to meet you. Lets spend a minute to get to know each other? Please enter the following:</p>
+    <form class="" action="indexw3part1hw.html" method="GET">
+        <fieldset>
+        <div class="personal-info">
+        <div class="form1 label-left">
+            <label for="first-name">First name*</label>
+            <input id="first-name" type="text" name="first-name" required>
+        </div>
+        <div class="form1">
+            <label for="last-name">Last name*</label>
+            <input id="last-name" type="text" name="last-name" required>
+        </div>
+        <div class="form1 label-left">
+            <label for="country">Country*</label>
+            <select class="country-option" name="country-option" id="country-option" required> 
+               <option value=""></option>
+               <option value="Denmark">Denmark</option>
+               <option value="Germany">Germany</option>
+               <option value="Sweden">Sweden</option>
+               <option value="Norway">Norway</option>
+            </select>
+        </div>
+        <div class="form1"></div>
+        <div class="form1 label-left">
+            <label for ="street-address">Street address*</label>
+            <input id="street-address" type="text" name="street-address">
+        </div>
+        <div class="form1"> 
+            <label for="post-code">Post-code*</label>
+            <input id="post-code" type="text" name="post-code" minlength="4"
+            maxlength="4" placeholder="Postcode" title="4 digit Zip code">
+        </div>
+        </div>
+        <div class="form1-description">
+            <label for="profile-description"><span class="profile-desc">Profile description</span>Please provide
+            short description about yourself to be displayed in our social media community</label>
+            <input id="profile-description" type="text" name="profile-description" reuired maxlength="500">
+        </div>
+        <p>use the same address for billing and shipping? uncheck to fill out a separate shipping address</p>
+        <label for="shipping-address"><span class="shipping-check">Shipping address</span></label>
+        <input type="checkbox" class="check-box" name="shipping-address" checked>
+        <input type="submit" class="button" name="Next step">
+   </fieldset>
+    </form>
+
+</body>
+</html>
