@@ -1,1 +1,2 @@
-My first git class
+My first git classgit.
+Learning new things.
