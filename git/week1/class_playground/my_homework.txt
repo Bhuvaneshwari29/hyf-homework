@@ -1,0 +1,3 @@
+My first git classgit.
+Learning new things.
+More text to the file
