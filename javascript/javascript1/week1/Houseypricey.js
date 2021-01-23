@@ -7,7 +7,7 @@ const peterGardenSizeInMeters = 100;
 const peterHouseCost = 2500000;
 peterHousePrice = peterVolumeInMeters * 2.5 * 1000 + peterGardenSizeInMeters * 300;
 let peterHouse;
-if (peterHouseCost >= peterHousePrice)
+if (peterHouseCost > peterHousePrice)
 {
     peterHouse ='Peter is paying more';
 }
@@ -30,7 +30,7 @@ const juliaGardenSizeInMeters = 70;
 const juliaHouseCost = 1000000;
 juliaHousePrice = juliaVolumeInMeters * 2.5 * 1000 + juliaGardenSizeInMeters * 300;
 let juliaHouse;
-if (juliaHouseCost >= juliaHousePrice)
+if (juliaHouseCost > juliaHousePrice)
 {
     juliaHouse ='Julia is paying more';
 }
