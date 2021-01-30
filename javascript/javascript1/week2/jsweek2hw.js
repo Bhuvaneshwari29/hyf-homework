@@ -29,7 +29,7 @@ console.log(fullName3);
 console.log(fullName4);
 
 //Event application
-const week = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
+const week = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
 function getEventWeekday(number)
 {
     let dateOfTheWeek = new Date();
@@ -76,7 +76,7 @@ function addStudentToClass(studentName)
   {
       class07Students.push(studentName);
   }
-  else if(class07Students.lenght>=6)
+  else if(class07Students.length>6)
   {
       console.log('Cannot add more students to class 07".');
   }
