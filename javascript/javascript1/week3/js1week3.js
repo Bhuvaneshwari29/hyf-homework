@@ -94,19 +94,20 @@ console.log(notes); // [{content: 'Pick up groceries', id: 1}, {content: 'Do lau
 
 //get a note
 function getNote(id) {
+  if(id===isNaN()){
+    return 'you entered valid format';
+  }
   for(i=0;i<notes.length;i++)
   {
-    if(id===isNaN()){
-      return 'you entered valid format';
-    }
-    else if (id===notes[i].id){
+      if (id===notes[i].id){
       return notes[i];
     }
     else{
-      return error;
+      return 'you have given invalid value';
     }
   }
 }
+
 const firstNote = getNote(1);
 console.log(firstNote); // {content: 'Pick up groceries', id: 1}
 
@@ -126,17 +127,16 @@ logOutNotesFormatted(); // should log out the text below
 //CactusIO-interactive (Smart phone usage app) optional
 //adding an activity
 let activities=[];
+
 function addActivity(dt,act,dur){
-  let addedActivities = { date:new Date(),
-    activity:act,
-  duration:dur
-};
-if(typeof act==='string' && typeof dt==='string' && typeof dur==='number'){
-  return activities.push(addedActivities);
-}
-else{
-  return console.log('activity is a string and duration should be a number');
-}
+  if(typeof act==='string' && typeof dt==='string' && typeof dur==='number'){
+    let addedActivities = { date:dt,
+      activity:act,
+    duration:dur
+  };
+  activities.push(addedActivities);
+  }
+  
 }
 addActivity(',','Instagram',30);
 addActivity(',','Facebook',40);
