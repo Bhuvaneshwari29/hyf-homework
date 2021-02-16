@@ -60,15 +60,15 @@ function getReply(command){
      const b =Number(mathEquation[2]);
      switch(operator){
          case '+':
-             return a+b;
+             return a + b;
              case '-':
-                 return a-b;
+                 return a - b;
                  case '*':
-                     return a*b;
+                     return a * b;
                      case '/':
-                         return a/b;
+                         return a / b;
                          case '%':
-                             return a%b;
+                             return a % b;
      }
  }
 //Reply for Hello my name is Benjamin example
