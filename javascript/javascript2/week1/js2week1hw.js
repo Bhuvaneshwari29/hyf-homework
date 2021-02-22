@@ -55,19 +55,19 @@ const hoverOption=document.getElementById('hover-option');
 const buttonOption=document.getElementById('button-option');
 const myButton=document.getElementById('spiritButton');
 buttonOption.addEventListener('change',function() {
-    myInput.removeEventListener('mouseover',EventCall);
+    myInput.removeEventListener('mouseover',eventCall);
     if (buttonOption.checked){
-        myButton.addEventListener('click',EventCall);
+        myButton.addEventListener('click',eventCall);
     }
 });
 hoverOption.addEventListener('change',function(){
-    myButton.removeEventListener('click',EventCall);
+    myButton.removeEventListener('click',eventCall);
     if(hoverOption.checked){
         myInput.focus();
-        myInput.addEventListener('mouseover',EventCall);
+        myInput.addEventListener('mouseover',eventCall);
     }
 });
-function EventCall(){
+function eventCall(){
     const spiritAnimalString = [
         'Swans',
         'Owl',
