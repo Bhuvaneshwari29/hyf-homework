@@ -50,7 +50,7 @@ const input_rating_field = document.getElementById("search-ratings-field");
 input_rating_field.addEventListener("input", function (e) {
     let ratingsUserValue = parseInt(e.target.value);
     let filteredRatings = products.filter(
-        (element) => element.rating > ratingsUserValue
+        (element) => element.rating >= ratingsUserValue
     );
     if (e.target.value === "") {
         filteredRatings = products;
