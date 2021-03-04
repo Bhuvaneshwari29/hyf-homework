@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fastestpresser.css">
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
+    <title>Fastest presser</title>
+</head>
+<body>
+    <h1 class="centered">Fastest Presser</h1>
+    <form class="centered" >
+      <input type="number" placeholder="Set seconds" id="duration" value=0>
+      <button id="game-start-form" type="button">Start game</button>
+    </form>
+    <div class="container">
+        <div class="s-clicker">
+          <canvas id="confettiS"></canvas>
+          <div>Press S</div>
+          <p id="scount"></p>
+          <p  class="winner" id="scountWinner"></p>
+        </div>
+        <div class="l-clicker">
+          <canvas id="confettiL"></canvas>
+          <div>Press L</div>
+          <p id="lcount"></p>
+          <p class="winner" id="lcountWinner"></p>
+        </div>
+      </div>
+      <div class="lastButton"><button id="restart" disabled>Restart</button></div>  
+    <script src='fastestpresser.js'></script>
+</body>
+</html>
