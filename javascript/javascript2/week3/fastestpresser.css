@@ -1,0 +1,37 @@
+body{
+    color:rgb(129, 120, 209);
+    font-style: italic;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.centered {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.s-clicker {
+    background: rgb(175, 226, 132);
+    flex: 45%;
+    text-align: center;
+    border-left: 1px solid #070707;
+}
+  
+.l-clicker {
+    background: rgb(236, 161, 190);
+    flex: 45%;
+    text-align: center;
+    border-left: 1px solid #11030a;
+}
+.winner{
+    color: #1b1818;
+    text-align: center;
+}
+  
+.lastButton{
+    display: flex;
+    justify-content: center;
+}
