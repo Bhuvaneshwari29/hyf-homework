@@ -11,22 +11,24 @@ document.addEventListener("keydown", keyCount);
 function keyCount(event)
  {
     if (timeDuration.value > 0) {
-    if(event.code === "KeyL"){
-        lCount++;
-        lCountNumber.innerHTML = lCount;
-        lCountWin.innerHTML = ""; 
-        sCountWin.innerHTML = "";
+        if(event.code === "KeyL"){
+            lCount++;
+            lCountNumber.innerHTML = lCount;
+            lCountWin.innerHTML = ""; 
+            sCountWin.innerHTML = "";
+        }
+        if(event.code === "KeyS"){
+            sCount++;
+            sCountNumber.innerHTML = sCount;
+            lCountWin.innerHTML = ""; 
+            sCountWin.innerHTML = "";
+        }
     }
-    if(event.code === "KeyS"){
-        sCount++;
-        sCountNumber.innerHTML = sCount;
-        lCountWin.innerHTML = ""; 
-        sCountWin.innerHTML = "";
-    }
-}
 }
 gameForm.addEventListener("click",(event)=>{
-    if (timeDuration.value > 0) {    
+    if (timeDuration.value <= 0) {    
+        return;
+    }
         let secs = 0;
         let id = setInterval(function() { 
                 secs++; 
@@ -56,9 +58,7 @@ gameForm.addEventListener("click",(event)=>{
                     restartButton.disabled=false;
                     document.removeEventListener("keydown", keyCount); 
                 }
-                }, 1000);
-                  
-          }
+                }, 1000); 
 });
 restartButton.addEventListener("click", (restartTheGame) =>{
     document.location.href = "";
