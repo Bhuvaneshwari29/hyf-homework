@@ -23,14 +23,25 @@ const message = document.getElementById("message");
 weatherInput.addEventListener("click", getCityWeather);
 function getCityWeather() {
   let cityName = city.value;
+  if (!cityName) {
+    alert("Enter a city name");
+  }
   detailsBox.style.visibility = "visible";
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=f289a9857cc75d109e0ec14d9b852abb`
   )
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Enter valid city name");
+      }
+    })
     .then((weatherData) => {
-      console.log(weatherData);
       renderWeatherStatus(weatherData);
+    })
+    .catch((error) => {
+      alert(error);
     });
 }
 function renderWeatherStatus(weatherData) {
@@ -52,10 +63,10 @@ function renderWeatherStatus(weatherData) {
   }
   let iconCode = weatherData.weather[0].icon;
   console.log(iconCode);
-  let iconurl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+  const iconurl = "http://openweathermap.org/img/w/" + iconCode + ".png";
   icon.src = iconurl;
 
-  let cloudiness = weatherData.clouds.all;
+  const cloudiness = weatherData.clouds.all;
   console.log(cloudiness);
   let cloudsDescription = weatherData.weather[0].description;
   console.log(cloudsDescription);
