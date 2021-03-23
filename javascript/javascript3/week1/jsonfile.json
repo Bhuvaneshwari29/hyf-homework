@@ -1,0 +1,44 @@
+[
+  {
+    "Band": "Jonas Brother",
+    "Album": [
+      {
+        "Titile": "Sucker",
+        "Released": "March 1",
+        "Year": 2019
+      },
+      {
+        "Titile": "Cool",
+        "Released": "April 5",
+        "Year": 2019
+      }
+    ]
+  },
+  {
+    "Band": "Shawn Mendes",
+    "Album": [
+      {
+        "Titile": "Senorita",
+        "Released": "June 21",
+        "Year": 2019,
+        "Singers": [
+          {
+            "Singer1": "Camila cabello",
+            "Singer2": "Shawn Mendes"
+          }
+        ]
+      },
+      {
+        "Titile": "I know what you did last summer",
+        "Released": "November 20",
+        "Year": 2015,
+        "Singers": [
+          {
+            "Singer1": "Camila cabello",
+            "Singer2": "Shawn Mendes"
+          }
+        ]
+      }
+    ]
+  }
+]
