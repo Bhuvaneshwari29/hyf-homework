@@ -33,10 +33,11 @@ translateOneByOne();
 
 //translate all at once
 function translateAllAtOnce() {
-  moveElement(redColorBox, redCircle);
-  moveElement(blueColorBox, blueCircle);
-  moveElement(greenColorBox, greenCircle);
-  Promise.all([redColorBox, blueColorBox, greenColorBox])
+  Promise.all([
+    moveElement(redColorBox, redCircle),
+    moveElement(blueColorBox, blueCircle),
+    moveElement(greenColorBox, greenCircle),
+  ])
     .then(() => {
       console.log("All the circles moved together");
     })
