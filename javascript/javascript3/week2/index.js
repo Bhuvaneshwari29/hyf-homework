@@ -1,9 +1,10 @@
 //Movies exercise
-const movieUrl =
-  "https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json";
+
 async function movieFunction() {
   try {
-    const movieResponse = await fetch(movieUrl);
+    const movieResponse = await fetch(
+      "https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json"
+    );
     const movieData = await movieResponse.json();
     //create an array of bad movies
     const badMovie = movieData.filter((movie) => movie.rating <= 5);
@@ -82,7 +83,6 @@ const usePromise = new Promise((resolve) => {
 //Do the 3 steps below using async/await
 async function useAsyncAwait() {
   try {
-    await usePromise;
     const fetchdata = await fetch("http://api.open-notify.org/astros.json");
     const astroCount = await fetchdata.json();
     console.log(
