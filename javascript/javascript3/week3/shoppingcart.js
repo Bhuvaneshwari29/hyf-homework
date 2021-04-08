@@ -34,7 +34,7 @@ class ShoppingCart {
   }
 
   searchProduct(productName) {
-    return this.products.filter((data) => data.name === productName);
+    return this.products.filter((data) => data.name.toLowerCase() === productName.toLowerCase());
   }
 
   getTotal() {
