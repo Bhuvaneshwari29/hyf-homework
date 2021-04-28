@@ -1,7 +1,7 @@
 SET NAMES utf8mb4;
 
 CREATE DATABASE meals_sharing;
-use meals_sharing;
+
 
 
 -- create table meals
@@ -42,6 +42,10 @@ CREATE TABLE `meal`(
   CONSTRAINT `fk_meal_reservation` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
   )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
   
+  -- Adding the new column which was missed in the reservation table
+  ALTER TABLE reservation
+  ADD COLUMN contact_email varchar(255) NOT NULL;
+  
 -- create table review  
  CREATE TABLE `review`(
  `id` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -68,6 +72,18 @@ INSERT into reservation (id, number_of_guests, meal_id, created_date, contact_ph
 values(2, 5, 2, "2021-04-25 19:00:00", 38843572, "Shruthi");
 INSERT into reservation (id, number_of_guests, meal_id, created_date, contact_phonenumber, contact_name)
 values(3, 5, 3, "2021-04-25 19:00:00", 37246562, "Prashanth");
+
+-- updating data for the new column contact_email from the reservation table which was missed
+UPDATE reservation
+SET contact_email = "sanjana@gmail.com"
+WHERE id = 1;
+UPDATE reservation
+SET contact_email = "shruthi@gmail.com"
+WHERE id = 2;
+UPDATE reservation
+SET contact_email = "prashanth@gmail.com"
+WHERE id = 3;
+
 
 -- Insert data into review table
 INSERT into review (id,title, description, meal_id, stars, created_date)
@@ -114,6 +130,14 @@ INSERT into reservation (id, number_of_guests, meal_id, created_date, contact_ph
 values(4, 4, 3, "2021-04-25", 36665512, "subish");
 INSERT into reservation (id, number_of_guests, meal_id, created_date, contact_phonenumber, contact_name)
 values(5, 2, 2, "2021-04-25", 35476563, "Moni");
+
+-- updating data for the new column contact_email from the reservation table which was missed
+UPDATE reservation
+SET contact_email = "subish@gmail.com"
+WHERE id = 4;
+UPDATE reservation
+SET contact_email = "moni@gmail.com"
+WHERE id = 5;
 
 -- Get a reservation with any id, fx 1
 SELECT *
@@ -167,7 +191,7 @@ WHERE price<100;
 -- Get meals that still has available reservations
 SELECT (meal.max_reservations - reservation.number_of_guests), meal.title
 FROM reservation
-INNER JOIN meal ON reservation.id=meal.id
+INNER JOIN meal ON reservation.meal_id=meal.id
 WHERE max_reservations - number_of_guests;
 
 -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
@@ -176,10 +200,10 @@ FROM meal
 WHERE title LIKE "%biriyani%";
 
 -- Get meals that has been created between two dates
-SELECT meal.title, meal.description
+SELECT meal.title, meal.description, meal.created_date
 FROM meal
-WHERE created_date > "2021-04-23"
-AND created_date < "2021-04-29";
+WHERE created_date BETWEEN "2021-04-23"
+AND "2021-04-29";
 
 -- Get only specific number of meals fx return only 5 meals
 SELECT meal.title, meal.description
@@ -187,19 +211,22 @@ FROM meal
 LIMIT 2;
 
 -- Get the meals that have good reviews
-SELECT *
-FROM review
-WHERE stars > 3;
+SELECT  meal.*, AVG(review.stars) AS Stars_recieved
+FROM meal
+INNER JOIN review ON meal.id=review.meal_id
+WHERE stars > 3
+GROUP BY review.meal_id;
 
 -- Get reservations for a specific meal sorted by created_date
-SELECT meal.title, meal.description, reservation.created_date
-FROM meal
-JOIN reservation ON meal.id = reservation.meal_id
-WHERE meal.id = 1
-ORDER BY reservation.created_date ASC;
+
+SELECT *
+FROM reservation
+INNER JOIN meal ON reservation.meal_id=meal.id
+WHERE meal.title="biriyani"
+ORDER BY reservation.created_date;
 
 -- Sort all meals by average number of stars in the reviews
 SELECT meal.id, meal.title, meal.description, avg(review.stars)
 FROM meal
 JOIN review ON meal.id = review.meal_id
-GROUP BY meal.id;
+GROUP BY meal_id;
