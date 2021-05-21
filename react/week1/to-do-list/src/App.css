@@ -1,0 +1,30 @@
+.body {
+  margin: 20px;
+  border-spacing: 20px;
+  font-family: sans-serif;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: paleturquoise;
+}
+
+.main-header {
+  border-bottom: 5px solid;
+  border-top: 5px solid;
+  border-spacing: 10px;
+}
+
+.todo-work {
+  list-style-type: none;
+}
+
+.todo-work,
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  border-spacing: 10px;
+}
