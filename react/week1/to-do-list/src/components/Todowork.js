@@ -10,7 +10,7 @@ function Todowork() {
   const todoWork = todoWorkArray.map((todo) => (
     <Todo key={todo.id} item={todo} />
   ));
-  return <div>{todoWork}</div>;
+  return <ul>{todoWork}</ul>;
 }
 
 export default Todowork;
