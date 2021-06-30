@@ -1,5 +1,7 @@
 Beans
 Carrot
-Ladiesfinger
+Brocolli
 Potato
 Mushroom
+Squash
+Beetroot
