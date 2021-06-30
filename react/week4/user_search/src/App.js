@@ -2,15 +2,15 @@ import React from 'react'
 import './App.css';
 
 import SearchBox from './components/SearchBox';
-import SearchResult from './components/SearchResult';
-import UsersDisplay from './components/UsersDisplay';
+import SearchInput from './components/SearchInput';
+import DisplayedUsers from './components/DisplayedUsers';
 
 function App() {
   return (
     <div className="App">
       <SearchBox>
-        <SearchResult />
-        <UsersDisplay />
+        <SearchInput />
+        <DisplayedUsers />
       </SearchBox>
     </div>
   );
