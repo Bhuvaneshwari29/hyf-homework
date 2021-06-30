@@ -1,14 +1,15 @@
 import React, { useState, useEffect, createContext } from "react";
 
-import SearchResult from "./SearchResult";
-import UsersDisplay from "./UsersDisplay";
+import SearchInput from "./SearchInput";
+import DisplayedUsers from "./DisplayedUsers";
 
 export const Context = createContext();
 
 const SearchBox = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [searchResult, setSearchResult] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const [users, setUsers] = useState([]);
+  
   const handleErrors = (response) => {
     if (!response.ok) {
       throw Error(response.statusText);
@@ -20,24 +21,25 @@ const SearchBox = () => {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `https://api.github.com/search/users?q=${searchResult}`
+          `https://api.github.com/search/users?q=${searchInput}`
         );
         handleErrors(response);
         const data = await response.json();
         const usersData = await data.items;
         setUsers(usersData);
       } catch (err) {
-        console.log(err);
+        
+        console.log('Error fetching',err);
       } finally {
         setIsLoading(false);
       }
     })();
-  }, [searchResult]);
+  }, [searchInput]);
 
   return (
-    <Context.Provider value={{ users, searchResult, setSearchResult }}>
-      <SearchResult />
-      {isLoading ? <Loading /> : <UsersDisplay />}
+    <Context.Provider value={{ users, searchInput, setSearchInput}}>
+      <SearchInput />
+      {isLoading ? <Loading /> : <DisplayedUsers />}
     </Context.Provider>
   );
 };
